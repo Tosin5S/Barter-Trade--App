@@ -1,6 +1,7 @@
 package com.x5s.barterTradeApp.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -10,12 +11,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
-
+import android.widget.*
+import com.x5s.barterTradeApp.ui.signUp.SignUpActivity
 import com.x5s.barterTradeApp.R
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -30,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
+        val signUp = findViewById<TextView>(R.id.signUp2)
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
                 .get(LoginViewModel::class.java)
@@ -93,6 +93,12 @@ class LoginActivity : AppCompatActivity() {
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
+            }
+
+            signUp.setOnClickListener() {
+                loading.visibility = View.VISIBLE
+                val  intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+                startActivity(intent)
             }
         }
     }
