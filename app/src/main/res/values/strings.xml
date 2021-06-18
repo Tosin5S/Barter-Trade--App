@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Barter Trade App</string>
-    <!-- Strings related to login -->
+    <!-- Strings related to login and sign up -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in">Sign In</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
